@@ -1,0 +1,68 @@
+/* Hallmark · genre: atmospheric · macrostructure: Workbench · theme: custom (BNB amber on ink-blue night)
+ * paper oklch(14% 0.012 265) · accent oklch(82% 0.165 85) · display/body: Geist · mono: Geist Mono
+ * nav: N5 floating pill · footer: Ft5 statement · enrichment: none (two fixed blooms)
+ */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Channels only (L C H) so Tailwind can apply <alpha-value> */
+:root {
+  --paper: 14% 0.012 265;
+  --surface: 18% 0.014 265;
+  --raised: 22% 0.016 265;
+  --line: 28% 0.016 265;
+  --ink: 96% 0.005 265;
+  --muted: 70% 0.015 265;
+  --accent: 82% 0.165 85;
+  --accent-ink: 20% 0.04 85;
+  --ok: 76% 0.15 160;
+  --danger: 70% 0.18 25;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: dark;
+}
+
+html, body { overflow-x: clip; }
+
+body {
+  min-height: 100vh;
+  background-color: oklch(var(--paper));
+  background-image:
+    radial-gradient(40rem 28rem at 12% -8%, oklch(var(--accent) / 0.10), transparent 70%),
+    radial-gradient(36rem 30rem at 100% 0%, oklch(62% 0.12 300 / 0.08), transparent 70%);
+  background-attachment: fixed;
+  color: oklch(var(--ink));
+  font-family: theme('fontFamily.sans');
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium
+      transition-[background-color,border-color,color,transform] duration-200 ease-brand
+      active:translate-y-px disabled:cursor-not-allowed disabled:opacity-40
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+  .btn-primary { @apply btn bg-accent text-accent-ink hover:bg-accent/90; }
+  .btn-ghost   { @apply btn border border-line text-muted hover:border-muted/60 hover:text-ink; }
+  .btn-ok      { @apply btn bg-ok/15 border border-ok/30 text-ok hover:bg-ok/25; }
+
+  .card  { @apply rounded-2xl border border-line bg-surface/80; }
+  .input {
+    @apply w-full rounded-xl border border-line bg-paper px-3.5 py-2.5 font-mono text-sm text-ink
+      placeholder:text-muted/50 transition-colors
+      focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25
+      aria-[invalid=true]:border-danger;
+  }
+  .label   { @apply mb-1.5 block text-xs font-medium text-muted; }
+  .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.14em] text-muted; }
+  .chip    { @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 py-1 text-xs font-medium; }
+  .alert   { @apply rounded-xl border border-danger/30 bg-danger/10 p-3 text-xs text-danger; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 150ms !important; animation: none !important; }
+}

@@ -1,0 +1,42 @@
+forge script script/DeployAuction.s.sol:DeployAuction --rpc-url bsc_testnet --broadcast
+[⠊] Compiling...
+No files changed, compilation skipped
+Script ran successfully.
+
+== Return ==
+0: contract Auction 0x517DD577A1596F8AB0C7b4347D766074e6F80976
+
+== Logs ==
+  Auction deployed to: 0x517DD577A1596F8AB0C7b4347D766074e6F80976
+
+## Setting up 1 EVM.
+
+==========================
+
+Chain 97
+
+Estimated gas price: 0.1 gwei
+
+Estimated total gas used for script: 3049169
+
+Estimated amount required: 0.0003049169 BNB
+
+==========================
+
+##### bsc-testnet
+✅  [Success] Hash: 0xf8ef0ad696c2c87b7d42b311516e3ffab1a2d1846fc4224b70ad419c9629b5c0
+Contract: Auction
+Contract Address: 0x517DD577A1596F8AB0C7b4347D766074e6F80976
+Block: 138432461
+Paid: 0.0002345515 BNB (2345515 gas * 0.1 gwei)
+
+✅ Sequence #1 on bsc-testnet | Total Paid: 0.0002345515 BNB (2345515 gas * avg 0.1 gwei)
+                                                                                                                                                            
+
+==========================
+
+ONCHAIN EXECUTION COMPLETE & SUCCESSFUL.
+
+Transactions saved to: /home/josemi/Documents/Blockchain_accelerator/Uniovi/Proyecto_subastas/auction-smart-contract/broadcast/DeployAuction.s.sol/97/run-latest.json
+
+Sensitive values saved to: /home/josemi/Documents/Blockchain_accelerator/Uniovi/Proyecto_subastas/auction-smart-contract/cache/DeployAuction.s.sol/97/run-latest.json

@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: auction_dapp_frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      # Mount local frontend files so any edits reload immediately
+      - ./frontend:/app
+      # Keep container node_modules isolated from the host
+      - /app/node_modules
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
