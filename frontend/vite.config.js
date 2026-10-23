@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './', // relative asset paths so the build works under IPFS /ipfs/<CID>/
   plugins: [react()],
   server: {
     host: '0.0.0.0',
