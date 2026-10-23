@@ -4,6 +4,8 @@ A decentralized auction system on **BNB Smart Chain Testnet**: a Solidity smart 
 
 Built as the final project of the UniOvi Blockchain Accelerator.
 
+- **Live DApp (IPFS):** https://bafybeidyfdiwchs6m6kc4rszptt2ksjxncnchw3k53szbq6xqrw46g3zyy.ipfs.inbrowser.link/
+- **IPFS CID:** `bafybeidyfdiwchs6m6kc4rszptt2ksjxncnchw3k53szbq6xqrw46g3zyy`
 - **Contract (BSC Testnet):** [`0x517DD577A1596F8AB0C7b4347D766074e6F80976`](https://testnet.bscscan.com/address/0x517DD577A1596F8AB0C7b4347D766074e6F80976)
 - **Chain ID:** 97
 
@@ -79,6 +81,10 @@ Or with Docker:
 ```sh
 docker compose up --build
 ```
+
+### Deploy to IPFS
+
+`vite.config.js` uses `base: './'`, so the build works from any IPFS gateway. Run `npm run build`, upload the `frontend/dist` folder to a pinning service (e.g. Pinata), and open `https://<CID>.ipfs.inbrowser.link/`. Each upload produces a new CID.
 
 ## Tech stack
 
